@@ -1,10 +1,4 @@
 
 # Hexagon Circle
 
-#### Current Release 
-
-**1.5.0** Static landing page launched
-
-#### Previous Releases
-
-**1.0.0** - Hexagon Circle D7 site launched
+Hey! I'm <strong>Ryan Mulligan</strong>, a front-end developer wandering around <strong>Seattle, Washington</strong>. This is the repo for my github page.
