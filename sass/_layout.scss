@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+// Layout
+body {
+  height: 100%;
+  padding: 0 24px;
+  margin: 0;
+  color: $color-circle;
+  background-color: $color-bg;
+  font-family: $font-body;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: $width-wrapper;
+  padding: 12px;
+  margin: 0 auto;
+  transform: translate3d(-50%, -50%, 0);
+}

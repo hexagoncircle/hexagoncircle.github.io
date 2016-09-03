@@ -1,0 +1,109 @@
+// Animation Time!
+@keyframes bounce-in {
+  0%, 10% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  15% {
+    transform: scale(1.4);
+  }
+  20%, 100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-out {
+  0%, 10% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  15% {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+  20%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes dip {
+  50% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sonar {
+  from {
+    opacity: .2
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: scale(0.8);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wobble-in {
+  0% {
+    transform: scale(0.1) translateY(100px);
+  }
+  30% {
+    transform: scale(1.2) translateY(0px);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
