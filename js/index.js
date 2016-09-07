@@ -4,10 +4,7 @@ $(document).ready(function() {
   setTimeout(function() {
     $('body').addClass('open');
   }, 1000);
-
-    $('body').addClass('open');
-
-
+  
 });
 
 // Fun facts!
