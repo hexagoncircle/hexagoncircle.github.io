@@ -91,7 +91,8 @@ h4, .h4 {
 // Lists
 .primary-list {
   dt, dd {
-    display: inline;
+    display: inline-block;
+    margin-right: 0.25rem;
   }
   
   dt { 
