@@ -1,109 +1,61 @@
-// Animation Time!
-@keyframes bounce-in {
-  0%, 10% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  15% {
-    transform: scale(1.4);
-  }
-  20%, 100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes bounce-out {
-  0%, 10% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  15% {
-    transform: scale(1.6);
-    opacity: 1;
-  }
-  20%, 100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-@keyframes dip {
-  50% {
-    transform: translateY(150px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes levitate {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(4px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes sonar {
-  from {
-    opacity: .2
-  }
-  to {
-    opacity: 0;
-    transform: scale(2);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes wobble {
-  0% {
-    transform: scale(0.8);
-  }
-  20% {
-    transform: scale(1.1);
+// Animations
+@keyframes headline-reveal-bar {
+  0% { 
+    transform-origin: 0 0;
+    transform: scaleX(0)
   }
   40% {
-    transform: scale(0.9);
+    transform-origin: 0 0;
+    transform: scaleX(1)
   }
-  60% {
-    transform: scale(1.05);
+  50% {
+    transform-origin: 100% 100%;
+    transform: scaleX(1);
   }
-  80% {
-    transform: scale(0.96);
-  }
-  100% {
-    transform: scale(1);
+  70%, 100% {
+    transform-origin: 100% 100%;
+    transform: scaleX(0)
   }
 }
 
-@keyframes wobble-in {
+@keyframes headline-reveal-text {
   0% {
-    transform: scale(0.1) translateY(100px);
+    color: transparent;
+    transform: translateX(-36px);
   }
-  30% {
-    transform: scale(1.2) translateY(0px);
+  40% {
+    color: transparent;
   }
-  50% {
-    transform: scale(0.9);
+  60%, 100% {
+    color: var(--color-primary);
+    transform: translateX(0);
   }
-  70% {
-    transform: scale(1.1);
+}
+
+@keyframes header-reveal-text {
+  from {
+    opacity: 0;
   }
-  90% {
-    transform: scale(0.96);
+  to {
+    opacity: 1;
   }
-  100% {
-    transform: scale(1);
+}
+
+@keyframes content-reveal-text {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes headline-reveal-line {
+  to { transform: scaleX(1); }
+}
+
+@keyframes headshot-reveal {
+  to { transform: translateY(100%); }
 }

@@ -1,67 +1,112 @@
-// Set loader timeout
-$(document).ready(function() {
+const canvas = document.getElementById("confetti");
+const checkbox = document.getElementById("page-mode"); 
+const ctx = canvas.getContext("2d");
+const pieces = [];
+const count = 50;
+const speed = 2;
 
-  setTimeout(function() {
-    $('body').addClass('open');
-  }, 1000);
+const colors = [
+  getComputedStyle(document.documentElement).getPropertyValue('--color-primary'),
+  getComputedStyle(document.documentElement).getPropertyValue('--color-secondary'),
+  getComputedStyle(document.documentElement).getPropertyValue('--color-tertiary')
+];
+
+let width = window.innerWidth;
+let height = window.innerHeight;
+let isPlaying = false;
+let animateFrames = null;
+let piece;
+
+function Piece(piece, w, h) {
+  piece.color = colors[(Math.random() * colors.length) | 0];
+  piece.x = Math.random() * w;
+  piece.y = (Math.random() * h) - h;
+  piece.diameter = Math.random() * (20 - 4) + 4;
+  piece.tilt = (Math.random() * 10) - 10;
+  piece.tiltAngleIncrement = Math.random() * 0.025 + 0.05;
+  piece.tiltAngle = 10;
   
-});
+  return piece;
+}
 
-// Fun facts!
-var num = 0;
-var fact;
-var visible = 'is-visible';
-var btnFacts = $('.btn__facts');
-var blockFacts = $('.block__facts');
-var blockFactsInner = '.content';
-
-// Show a random fact when clicked
-btnFacts.on('click', function(e) {
-  e.preventDefault();
-
-  $(this).toggleClass(visible);
-  blockFacts.toggleClass(visible);
-
-  if(num < 8 && !blockFacts.hasClass(visible)) {
-    // Next!
-    num++;
-  } else if(num < 8 && blockFacts.hasClass(visible)) {
-    // Hold please
+function runAnimation() {
+  ctx.clearRect(0, 0, width, height);
+  
+  if (!pieces.length) {
+    animateFrames = null;
+  } else {
+    updatePieces();
+    drawPieces(ctx);
+    animateFrames = window.requestAnimationFrame(runAnimation);
   }
+}
+
+function throwConfetti() {
+  isPlaying = true;
+  setCanvasDimensions();
+  while (pieces.length < count) pieces.push(Piece({}, width, height));
+  if (animateFrames === null) runAnimation();
+}
+
+function haltConfetti() {
+  isPlaying = false;
+}
+
+function drawPieces(ctx) {
+  let x, y;
+  
+  for (var i = 0; i < pieces.length; i++) {
+    piece = pieces[i];
+    ctx.beginPath();
+    ctx.lineWidth = piece.diameter;
+    ctx.strokeStyle = piece.color;
+    x = piece.x + piece.tilt;
+    y = piece.y + piece.tilt;
+    ctx.moveTo(x + piece.diameter / 2, piece.y);
+    ctx.lineTo(x, y + piece.diameter / 2);
+    ctx.stroke();
+  }
+}
+
+function updatePieces() {  
+  for (var i = 0; i < pieces.length; i++) {
+    piece = pieces[i];
+    
+    if (!isPlaying && piece.y < -15)
+      piece.y = height + 100;
     else {
-    // Start it over
-    num = 0;
+      piece.tiltAngle += piece.tiltAngleIncrement;
+      piece.x += Math.sin(piece.tiltAngle);
+      piece.y += (Math.cos(piece.tiltAngle) + piece.diameter + speed) * 0.5;
+      piece.tilt = Math.sin(piece.tiltAngle) * 15;
+    }
+    
+    if (piece.x > width + 20 || piece.x < -20 || piece.y > height) {
+      if (isPlaying && pieces.length <= count)
+        Piece(piece, width, height);
+      else {
+        pieces.splice(i, 1);
+        i--;
+      }
+    }
   }
-  console.log(num);
+}
 
-  // Just the facts.
-  switch(num) {
-    case 0:
-      fact = "I put a bunch of random things about me in here. Close and open for more juicy details.";
-      break;
-    case 1:
-      fact = "I spend lots of free time writing music. I want all the synthesizers and drum machines.";
-      break;
-    case 2:
-      fact = "I'm originally from New Jersey. People think I say things like 'water' and 'coffee' weird.";
-      break;
-    case 3:
-      fact = "I always keep a frozen pizza on the premises.";
-      break;
-    case 4:
-      fact = "I want to become a master chef. Or at least a decent one.";
-      break;
-    case 5:
-      fact = "I debate running off to Barcelona. If I'm gone for a good chunk of time, you know where to start looking.";
-      break;
-    case 6:
-      fact = "...now you know too much...";
-      break;
-    case 7:
-      fact = "Let's just start over.";
-      break;
+function setCanvasDimensions() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+}
+
+window.addEventListener("resize", setCanvasDimensions);
+
+checkbox.addEventListener("click", () => {
+  if (checkbox.checked) {
+    document.body.classList.add('dark-mode');
+    throwConfetti(); 
+  } else {
+    document.body.classList.remove('dark-mode');
+    haltConfetti();
   }
-
-  blockFacts.find(blockFactsInner).text(fact);
-
 });

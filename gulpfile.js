@@ -13,7 +13,7 @@ var livereload = require('gulp-livereload');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var jade = require('gulp-jade');
+var pug = require('gulp-pug');
 
 /************************
  * CONFIGURATION
@@ -25,14 +25,7 @@ var paths = {
   bowerDir: './bower_components'
 };
 
-var includePaths = [
-  // add paths to any sass @imports that you will use from bower_components here
-  // paths.bowerDir + '/path/to/scss'
-  paths.bowerDir + '/foundation/scss'
-];
-
 var stylesSrc = [
-  // add bower_components CSS here
   './sass/style.scss'
 ];
 
@@ -43,9 +36,7 @@ var stylesSrc = [
 gulp.task('styles', function() {
   gulp.src(stylesSrc)
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      includePaths: includePaths
-    }))
+    .pipe(sass())
 
     // Catch any SCSS errors and prevent them from crashing gulp
     .on('error', function (error) {
@@ -58,7 +49,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('./css/src/'))
     .pipe(livereload())
     .pipe(minifyCss({
-      compatibility: 'ie8',
+      compatibility: 'ie10',
       // turn off minifyCss sourcemaps so they don't conflict with gulp-sourcemaps and includePaths
       sourceMap: false
     }))
@@ -75,9 +66,9 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['styles']);
 
-// run this task by typing in gulp jade in CLI
-gulp.task('jade', function() {
-    return gulp.src('templates/**/*.jade')
-        .pipe(jade())
-        .pipe(gulp.dest('./'));
+// run this task by typing in gulp pug in CLI
+gulp.task('pug', function() {
+  return gulp.src('templates/**/*.pug')
+    .pipe(pug())
+    .pipe(gulp.dest('./'));
 });

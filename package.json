@@ -1,0 +1,33 @@
+{
+  "name": "hexagoncircle.github.io",
+  "version": "1.0.0",
+  "description": "Hey! I'm <strong>Ryan Mulligan</strong>, a front-end developer wandering around <strong>Seattle, Washington</strong>. This is the repo for my github page.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "uglify": "^0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexagoncircle/hexagoncircle.github.io.git"
+  },
+  "author": "Ryan Mulligan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hexagoncircle/hexagoncircle.github.io/issues"
+  },
+  "homepage": "https://github.com/hexagoncircle/hexagoncircle.github.io#readme"
+}

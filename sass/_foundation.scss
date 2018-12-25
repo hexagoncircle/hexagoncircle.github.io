@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,500,700|IBM Plex Serif');
+
+:root {
+  --page-width: 55em;
+  
+  --anim-easing: cubic-bezier(0.155, 0.64, 0.24, 1);
+  --anim-speed: 480ms;
+  --anim-delay: 400ms;
+  
+  --font-primary:   'IBM Plex Serif', sans-serif;
+  --font-secondary: 'IBM Plex Sans', sans-serif;
+  
+  --color-primary:   #363636;
+  --color-secondary: #00B2FF;
+  --color-tertiary:  #F9F871;
+  --color-page-bg:   #FFFFFF;
+  
+  --image-headshot: 70px;
+  --border-stroke-width: 4px;
+  --border-radius: 57% 43% 57% 43% / 48% 36% 64% 52%;
+
+  --text-base-size: 100%;
+  --text-base-line-height: 1.7;
+  --text-scale-ratio: 1.5;
+  --text-letter-spacing: -0.0125rem;
+  
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  
+  --text-bold:   900;
+  --text-medium: 500;
+  --text-normal: 300;
+  
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+}
+
+.dark-mode {
+  --color-primary:   #E0E4E8;
+  --color-secondary: #00B2FF;
+  --color-tertiary:  #919191;
+  --color-page-bg:   #242424;
+}
+
+
+// Breakpoints
+$breakpoint-small:  35em;
+$breakpoint-medium: 50em;
+
+
+// Utility classes
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

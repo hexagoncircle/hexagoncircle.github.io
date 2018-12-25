@@ -1,0 +1,66 @@
+// Social links
+.resume-social-links {
+  display: flex;
+  align-items: center;
+  
+  a {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    transform: scale(1);
+    transform-origin: 50% 100%;
+    transition: transform calc(var(--anim-speed)) var(--anim-easing);
+    
+    @media (min-width: $breakpoint-small) {
+      width: 24px;
+      height: 24px;
+    }
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      pointer-events: none;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background-color: var(--color-secondary);
+      border-radius: var(--border-radius);
+      z-index: -1;
+      transform: scale(0) rotate(180deg);
+      transition: transform var(--anim-speed) var(--anim-easing);
+    }
+    
+    &:not(:first-child) {
+      margin-left: var(--space-md);
+    }
+    
+    &:active {
+      transform: scale(1.2) translateY(-5px);
+      transition-duration: 0s;
+    }
+  }
+
+  svg {
+    fill: var(--color-primary);
+    width: 100%;
+    height: 100%;
+    transition: fill var(--anim-speed) var(--anim-easing);
+  }
+}
+
+// Social links hovered
+@media (hover: hover) {
+  .resume-social-links a {
+    &:hover,
+    &:focus {
+      outline: none;
+      transform: scale(1.5);
+      z-index: 1;
+
+      &:before { transform: scale(1) rotate(0); }
+      svg      { fill: white; }
+    } 
+  }
+}
