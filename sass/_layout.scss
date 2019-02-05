@@ -100,3 +100,55 @@ canvas {
     }
   }
 }
+
+
+// Print overrides
+@media print {
+  .resume {
+    font-size: 14px;
+  }
+  
+  .resume-section {
+    margin: var(--space-lg) 0;
+  }
+  
+  .flow>:not(:last-child) {
+    margin-bottom: var(--space-md);
+  }
+  
+  .resume-header {
+    display: block;
+    text-align: left;
+    overflow: auto;
+    margin-bottom: var(--space-sm);
+  
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  
+    > * {
+      float: left;
+  
+      + * {
+        margin-left: var(--space-sm);
+      }
+    }
+  }
+  
+  .resume-content {
+    padding-right: 3rem;
+    width: 70%;
+    float: left;
+  }
+  
+  .resume-sidebar {
+    width: 30%;
+    float: right; 
+  
+    .resume-section:first-child {
+      display: none;
+    }
+  }
+}
