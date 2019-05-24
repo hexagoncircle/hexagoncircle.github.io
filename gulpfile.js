@@ -57,18 +57,17 @@ gulp.task('styles', function() {
     .pipe(livereload());
 });
 
-gulp.task('watch', function() {
-  if (autoReload) {
-    livereload.listen();
-  }
-  gulp.watch('./sass/**/*.scss', ['styles']);
-});
-
-gulp.task('default', ['styles']);
-
-// run this task by typing in gulp pug in CLI
 gulp.task('pug', function() {
   return gulp.src('templates/**/*.pug')
     .pipe(pug())
     .pipe(gulp.dest('./'));
 });
+
+gulp.task('watch', function() {
+  if (autoReload) {
+    livereload.listen();
+  }
+  gulp.watch('./sass/**/*.scss', gulp.series('styles'));
+});
+
+gulp.task('default', gulp.series('styles'));

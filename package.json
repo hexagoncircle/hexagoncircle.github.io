@@ -4,7 +4,7 @@
   "description": "Hey! I'm <strong>Ryan Mulligan</strong>, a front-end developer wandering around <strong>Seattle, Washington</strong>. This is the repo for my github page.",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.1",
