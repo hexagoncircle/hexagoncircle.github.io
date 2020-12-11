@@ -1,13 +1,20 @@
 {
-  "name": "heaxgoncircle",
-  "short_name": "heaxgoncircle",
+  "name": "Ryan Mulligan",
+  "short_name": "Ryan Mulligan",
   "icons": [
     {
+      "src": "/favicon/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
       "src": "/images/android-chrome-512x512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "background_color": "#ffffff",
-  "theme_color": "#E01A4F",
-  "display": "fullscreen"
+  "start_url": "/index.html",
+  "background_color": "#000000",
+  "display": "standalone",
+  "theme_color": "#E01A4F"
 }
