@@ -3,7 +3,7 @@
   "description": "Front-end developer and UI engineer",
   "icons": [
     {
-      "src": "/favicon/android-chrome-192x192.png",
+      "src": "/images/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
