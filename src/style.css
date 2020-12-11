@@ -304,7 +304,7 @@ body > * {
 .project-list li {
   flex: 1 0 auto;
   position: relative;
-  width: clamp(250px, 30vw, 325px);
+  width: clamp(280px, 30vw, 380px);
   background: var(--color-bg-accent);
   border-radius: var(--border-radius);
 }
