@@ -86,7 +86,7 @@ body,
 .visually-hidden {
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -103,7 +103,7 @@ body,
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
 }
 
 .scroll-x > * {
@@ -119,8 +119,8 @@ body,
 
 .multi-column {
   -webkit-column-width: 200px;
-     -moz-column-width: 200px;
-          column-width: 200px;
+  -moz-column-width: 200px;
+  column-width: 200px;
 }
 
 .full-bleed {
@@ -190,7 +190,7 @@ body > * {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   padding: var(--space-xs);
 }
 
@@ -226,7 +226,7 @@ body > * {
 
 .title {
   -webkit-box-flex: 1;
-          flex: 1 0 100%;
+  flex: 1 0 100%;
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
   line-height: 1.2;
@@ -238,7 +238,7 @@ body > * {
 
 .subtitle {
   -webkit-box-flex: 1;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
   font-style: italic;
   font-size: var(--text-md);
   font-weight: var(--font-bold);
@@ -250,12 +250,12 @@ body > * {
   display: -webkit-inline-box;
   display: inline-flex;
   -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .theme-slider {
   -webkit-box-flex: 1;
-          flex: 1 1 0;
+  flex: 1 1 0;
   max-width: 60px;
   padding: 0.2rem 0;
   margin-left: 0.8rem;
@@ -269,11 +269,11 @@ body > * {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-right: var(--page-padding);
 }
 
@@ -284,7 +284,7 @@ body > * {
   top: 50%;
   font-size: var(--text-lg);
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
@@ -324,12 +324,12 @@ body > * {
   content: "";
   display: block;
   -webkit-box-flex: 0;
-          flex: 0 0 var(--page-padding);
+  flex: 0 0 var(--page-padding);
 }
 
 .project-list li {
   -webkit-box-flex: 1;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
   position: relative;
   width: clamp(250px, 30vw, 325px);
   background: var(--color-bg-accent);
@@ -353,7 +353,7 @@ body > * {
 .project-list img {
   position: absolute;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   -webkit-transition: opacity 300ms ease-out;
@@ -458,6 +458,9 @@ input[type="range"]:active::-moz-range-thumb {
   font-weight: var(--font-bold);
 }
 
+.employment-list .job-role {
+  line-height: 1.3;
+}
 .employment-list .job-info {
   margin-top: var(--space-xs);
   font-size: var(--text-sm);
