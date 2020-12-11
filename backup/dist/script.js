@@ -7,6 +7,8 @@ const slider = document.querySelector(".theme-slider");
   });
 });
 
+document.body.dataset.theme = slider.value;
+
 slider.addEventListener("input", () => {
   document.body.dataset.theme = slider.value;
 });
