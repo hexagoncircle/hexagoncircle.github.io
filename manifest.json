@@ -1,0 +1,13 @@
+{
+  "name": "heaxgoncircle",
+  "short_name": "heaxgoncircle",
+  "icons": [
+    {
+      "src": "/images/android-chrome-512x512.png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#E01A4F",
+  "display": "fullscreen"
+}
