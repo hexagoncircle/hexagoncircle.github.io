@@ -95,6 +95,7 @@
 }
 
 .scroll-x {
+  --scrollbar-offset: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,15 +132,17 @@
 .scroll-x:hover::-webkit-scrollbar,
 .scroll-x::-webkit-scrollbar:active {
   background-color: var(--color-primary);
-  -webkit-box-shadow: inset var(--color-bg) 0 0 0 4px;
-  box-shadow: inset var(--color-bg) 0 0 0 4px;
+  -webkit-box-shadow: inset var(--color-bg) 0 0 0 var(--scrollbar-offset);
+  box-shadow: inset var(--color-bg) 0 0 0 var(--scrollbar-offset);
 }
 
 .scroll-x:hover::-webkit-scrollbar-thumb,
 .scroll-x::-webkit-scrollbar-thumb:active {
   background-color: var(--color-primary);
-  -webkit-box-shadow: var(--color-bg) 0 0 0 4px;
-  box-shadow: var(--color-bg) 0 0 0 4px;
+  -webkit-box-shadow: inset var(--color-bg) calc(var(--scrollbar-offset) * -1) 0 0,
+    inset var(--color-bg) var(--scrollbar-offset) 0 0;
+  box-shadow: inset var(--color-bg) calc(var(--scrollbar-offset) * -1) 0 0,
+    inset var(--color-bg) var(--scrollbar-offset) 0 0;
   border-radius: var(--border-radius);
 }
 

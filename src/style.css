@@ -94,6 +94,7 @@
 }
 
 .scroll-x {
+  --scrollbar-offset: 4px;
   display: flex;
   max-width: 100%;
   overflow-x: scroll;
@@ -127,13 +128,14 @@
 .scroll-x:hover::-webkit-scrollbar,
 .scroll-x::-webkit-scrollbar:active {
   background-color: var(--color-primary);
-  box-shadow: inset var(--color-bg) 0 0 0 4px;
+  box-shadow: inset var(--color-bg) 0 0 0 var(--scrollbar-offset);
 }
 
 .scroll-x:hover::-webkit-scrollbar-thumb,
 .scroll-x::-webkit-scrollbar-thumb:active {
   background-color: var(--color-primary);
-  box-shadow: var(--color-bg) 0 0 0 4px;
+  box-shadow: inset var(--color-bg) calc(var(--scrollbar-offset) * -1) 0 0,
+    inset var(--color-bg) var(--scrollbar-offset) 0 0;
   border-radius: var(--border-radius);
 }
 
