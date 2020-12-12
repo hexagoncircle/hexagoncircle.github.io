@@ -134,9 +134,8 @@
 .scroll-x:hover::-webkit-scrollbar-thumb,
 .scroll-x::-webkit-scrollbar-thumb:active {
   background-color: var(--color-primary);
-  box-shadow: inset var(--color-bg) calc(var(--scrollbar-offset) * -1) 0 0,
-    inset var(--color-bg) var(--scrollbar-offset) 0 0;
-  border-radius: var(--border-radius);
+  border-left: var(--scrollbar-offset) solid var(--color-bg);
+  border-right: var(--scrollbar-offset) solid var(--color-bg);
 }
 
 .multi-column {
