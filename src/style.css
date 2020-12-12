@@ -111,6 +111,12 @@
   scroll-margin-left: var(--page-padding);
 }
 
+@media not all and (any-hover: hover) {
+  .scroll-x::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .scroll-x::-webkit-scrollbar {
   height: 12px;
   background-color: transparent;
