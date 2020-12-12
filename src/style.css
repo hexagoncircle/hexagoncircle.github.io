@@ -412,6 +412,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: var(--border-radius);
   cursor: grab;
   box-shadow: var(--color-bg) 0 0 0 4px;
+  transition: box-shadow var(--duration) var(--ease);
 }
 
 input[type="range"]:active::-webkit-slider-thumb {
