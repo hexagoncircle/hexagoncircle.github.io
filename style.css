@@ -335,6 +335,9 @@ body > * {
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
+  -webkit-transition: color var(--duration) var(--ease);
+  -o-transition: color var(--duration) var(--ease);
+  transition: color var(--duration) var(--ease);
 }
 
 .icon-codepen::before {
