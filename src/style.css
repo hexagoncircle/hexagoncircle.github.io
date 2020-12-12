@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,700;1,400&display=swap");
-
 :root {
   --font-main: "Petrona", serif;
   --font-bold: 600;
@@ -187,7 +185,6 @@ body {
   background-color: var(--color-bg);
   font-family: var(--font-main);
   font-size: var(--text-base);
-  font-display: swap;
   line-height: 1.5;
   transition: var(--duration) var(--ease);
   transition-property: background-color, color;
