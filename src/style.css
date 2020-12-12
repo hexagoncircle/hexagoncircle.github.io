@@ -112,8 +112,25 @@
 }
 
 .scroll-x::-webkit-scrollbar {
-  width: 0 !important;
-  display: none;
+  height: 12px;
+  background-color: transparent;
+}
+
+.scroll-x::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.scroll-x:hover::-webkit-scrollbar,
+.scroll-x::-webkit-scrollbar:active {
+  background-color: var(--color-primary);
+  box-shadow: inset var(--color-bg) 0 0 0 4px;
+}
+
+.scroll-x:hover::-webkit-scrollbar-thumb,
+.scroll-x::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-primary);
+  box-shadow: var(--color-bg) 0 0 0 4px;
+  border-radius: var(--border-radius);
 }
 
 .multi-column {
@@ -388,6 +405,7 @@ input[type="range"]::-webkit-slider-thumb {
   border: 0;
   border-radius: var(--border-radius);
   cursor: grab;
+  box-shadow: var(--color-bg) 0 0 0 4px;
 }
 
 input[type="range"]:active::-webkit-slider-thumb {
