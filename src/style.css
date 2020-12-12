@@ -286,6 +286,7 @@ body > * {
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
+  transition: color var(--duration) var(--ease);
 }
 
 .icon-codepen::before {
