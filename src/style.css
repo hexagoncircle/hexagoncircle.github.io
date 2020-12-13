@@ -323,7 +323,7 @@ body > * {
   flex: 0 0 var(--page-padding);
 }
 
-.project-list li {
+.project-list-item {
   flex: 1 0 auto;
   position: relative;
   width: clamp(280px, 30vw, 380px);
@@ -331,21 +331,21 @@ body > * {
   border-radius: var(--border-radius);
 }
 
-.project-list li a {
+.project-list-item a {
   display: block;
 }
 
-.project-list li a::after {
+.project-list-item a::after {
   content: "";
   display: block;
   padding-bottom: calc(100% / (16 / 9));
 }
 
-.project-list li + li {
+.project-list-item + .project-list-item {
   margin-left: clamp(var(--space-base), 3vw, var(--page-padding));
 }
 
-.project-list img {
+.project-list-item img {
   position: absolute;
   object-fit: cover;
   width: 100%;
@@ -354,7 +354,7 @@ body > * {
   border-radius: var(--border-radius);
 }
 
-.project-list img[data-is-loading] {
+.project-list-item img[data-is-loading] {
   opacity: 0;
 }
 
