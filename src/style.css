@@ -313,7 +313,6 @@ body > * {
 .project-list {
   margin-top: var(--space-lg);
   margin-bottom: calc(var(--space-sm) * -1);
-  list-style: none;
   padding: var(--page-padding);
   width: 100%;
 }
