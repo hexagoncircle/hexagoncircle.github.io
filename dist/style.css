@@ -208,20 +208,20 @@ body > * {
 }
 
 /* Nav */
-.social-links {
+.nav-header {
   position: fixed;
   top: var(--space-sm);
   right: var(--space-base);
   z-index: 1;
 }
 
-.social-links ul {
+.social-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.social-links .link {
+.social-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

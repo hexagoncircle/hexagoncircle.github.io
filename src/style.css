@@ -196,18 +196,18 @@ body > * {
 }
 
 /* Nav */
-.social-links {
+.nav-header {
   position: fixed;
   top: var(--space-sm);
   right: var(--space-base);
   z-index: 1;
 }
 
-.social-links ul {
+.social-links {
   display: flex;
 }
 
-.social-links .link {
+.social-link {
   display: flex;
   align-items: center;
   padding: var(--space-xs);
