@@ -265,13 +265,23 @@ body > * {
 }
 
 /* Projects */
-.icon-codepen {
+.project-list {
+  margin-top: var(--space-lg);
+  margin-bottom: calc(var(--space-sm) * -1);
+  padding: var(--page-padding);
+  width: 100%;
+}
+
+.project-list::after {
+  content: "";
+  display: block;
+  flex: 0 0 var(--page-padding);
+}
+
+.project-list-mark {
   position: relative;
   align-self: center;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
   margin-right: var(--page-padding);
 }
 
@@ -308,19 +318,6 @@ body > * {
 .icon-codepen:hover svg,
 .icon-codepen:focus svg {
   fill: var(--color-text);
-}
-
-.project-list {
-  margin-top: var(--space-lg);
-  margin-bottom: calc(var(--space-sm) * -1);
-  padding: var(--page-padding);
-  width: 100%;
-}
-
-.project-list::after {
-  content: "";
-  display: block;
-  flex: 0 0 var(--page-padding);
 }
 
 .project-list-item {

@@ -300,23 +300,28 @@ body > * {
 }
 
 /* Projects */
-.icon-codepen {
+.project-list {
+  margin-top: var(--space-lg);
+  margin-bottom: calc(var(--space-sm) * -1);
+  padding: var(--page-padding);
+  width: 100%;
+}
+
+.project-list::after {
+  content: "";
+  display: block;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 var(--page-padding);
+  flex: 0 0 var(--page-padding);
+}
+
+.project-list-mark {
   position: relative;
   -ms-flex-item-align: center;
   align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   margin-right: var(--page-padding);
 }
 
@@ -359,21 +364,6 @@ body > * {
 .icon-codepen:hover svg,
 .icon-codepen:focus svg {
   fill: var(--color-text);
-}
-
-.project-list {
-  margin-top: var(--space-lg);
-  margin-bottom: calc(var(--space-sm) * -1);
-  padding: var(--page-padding);
-  width: 100%;
-}
-
-.project-list::after {
-  content: "";
-  display: block;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 var(--page-padding);
-  flex: 0 0 var(--page-padding);
 }
 
 .project-list-item {
