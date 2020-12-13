@@ -7,6 +7,14 @@ const slider = document.querySelector(".theme-slider");
   });
 });
 
+if (
+  !localStorage.theme &&
+  window.matchMedia("prefers-color-scheme: light").matches
+) {
+  document.body.dataset.theme = 5;
+  slider.value = 5;
+}
+
 if (localStorage.theme) {
   document.body.dataset.theme = localStorage.theme;
   slider.value = localStorage.theme;
