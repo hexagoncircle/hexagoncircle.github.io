@@ -9,7 +9,7 @@ const slider = document.querySelector(".theme-slider");
 
 if (
   !localStorage.theme &&
-  window.matchMedia("prefers-color-scheme: light").matches
+  window.matchMedia("(prefers-color-scheme: light)").matches
 ) {
   document.body.dataset.theme = 5;
   slider.value = 5;

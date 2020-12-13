@@ -58,6 +58,7 @@
 }
 
 /* Themes */
+
 [data-theme="1"] {
   --color-text: hsl(0, 0%, 88%);
   --color-text-accent: hsl(0, 0%, 68%);
