@@ -50,7 +50,7 @@
 
   --border-radius: 0.1rem;
   --outline-offset: 4px;
-  --duration: 200ms;
+  --duration: 0s;
   --ease: cubic-bezier(0.33, 1, 0.68, 1);
 
   --page-max-width: 40ch;
@@ -104,10 +104,6 @@
 }
 
 /* Utilities */
-.preload * {
-  --duration: 0s;
-}
-
 .flow > * + * {
   margin-top: var(--space-md);
 }
