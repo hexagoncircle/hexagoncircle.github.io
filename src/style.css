@@ -27,9 +27,9 @@
   --font-main: "Petrona", serif;
   --font-bold: 600;
 
-  --text-base: clamp(1.25rem, 4vw, 1.5rem);
+  --text-base: clamp(1.2rem, 4vw, 1.5rem);
   --text-sm: clamp(0.85rem, 3vw, 1rem);
-  --text-md: clamp(1.25rem, 5vw, 2rem);
+  --text-md: clamp(1.4rem, 5vw, 2rem);
   --text-lg: clamp(2.25rem, 8vw, 3rem);
 
   --space-base: 1rem;
@@ -348,7 +348,7 @@ body > * {
 .project-list-item {
   flex: 1 0 auto;
   position: relative;
-  width: clamp(280px, 30vw, 380px);
+  width: clamp(260px, 30vw, 380px);
   background: var(--color-bg-accent);
   border-radius: var(--border-radius);
 }
