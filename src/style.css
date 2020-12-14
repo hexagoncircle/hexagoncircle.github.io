@@ -376,7 +376,6 @@ body > * {
   border-radius: var(--border-radius);
 }
 
-.project-list-item .lazyload,
 .project-list-item .lazyloading {
   opacity: 0;
 }
