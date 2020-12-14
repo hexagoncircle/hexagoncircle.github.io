@@ -20,9 +20,9 @@ if (localStorage.theme) {
   slider.value = localStorage.theme;
 }
 
-window.addEventListener("load", () => {
-  document.documentElement.style.setProperty("--duration", "200ms");
-});
+window.addEventListener("load", () =>
+  document.body.classList.remove("preload")
+);
 
 slider.addEventListener("input", () => {
   document.body.dataset.theme = slider.value;
