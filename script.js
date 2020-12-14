@@ -1,4 +1,3 @@
-const images = document.querySelectorAll("img");
 const slider = document.querySelector(".theme-slider");
 
 const setThemeSettings = () => {

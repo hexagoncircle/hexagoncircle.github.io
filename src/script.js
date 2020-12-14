@@ -1,4 +1,3 @@
-const images = document.querySelectorAll("img");
 const slider = document.querySelector(".theme-slider");
 
 const setThemeSettings = () => {
@@ -16,12 +15,6 @@ const setThemeSettings = () => {
 
 setThemeSettings();
 setTimeout(() => document.body.style.setProperty("--duration", "200ms"), 1000);
-
-[...images].forEach((image) => {
-  image.addEventListener("load", (event) => {
-    event.target.removeAttribute("data-is-loading");
-  });
-});
 
 slider.addEventListener("input", () => {
   document.body.dataset.theme = slider.value;

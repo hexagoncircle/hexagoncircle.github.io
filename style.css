@@ -427,7 +427,7 @@ body > * {
   border-radius: var(--border-radius);
 }
 
-.project-list-item img[data-is-loading] {
+.project-list-item .lazyloading {
   opacity: 0;
 }
 
