@@ -2,24 +2,33 @@
   font-family: "Petrona";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url("fonts/petrona-v12-latin-regular.woff2") format("woff2"),
-    url("fonts/petrona-v12-latin-regular.woff") format("woff");
+  src: local(""),
+    url("https://assets.codepen.io/225363/petrona-v12-latin-regular.woff2")
+      format("woff2"),
+    url("https://assets.codepen.io/225363/petrona-v12-latin-regular.woff")
+      format("woff");
   font-display: swap;
 }
 @font-face {
   font-family: "Petrona";
   font-style: normal;
   font-weight: 700;
-  src: local(""), url("fonts/petrona-v12-latin-700.woff2") format("woff2"),
-    url("fonts/petrona-v12-latin-700.woff") format("woff");
+  src: local(""),
+    url("https://assets.codepen.io/225363/petrona-v12-latin-700.woff2")
+      format("woff2"),
+    url("https://assets.codepen.io/225363/petrona-v12-latin-700.woff")
+      format("woff");
   font-display: swap;
 }
 @font-face {
   font-family: "Petrona";
   font-style: italic;
   font-weight: 400;
-  src: local(""), url("fonts/petrona-v12-latin-italic.woff2") format("woff2"),
-    url("fonts/petrona-v12-latin-italic.woff") format("woff");
+  src: local(""),
+    url("https://assets.codepen.io/225363/petrona-v12-latin-italic.woff2")
+      format("woff2"),
+    url("https://assets.codepen.io/225363/petrona-v12-latin-italic.woff")
+      format("woff");
   font-display: swap;
 }
 
@@ -316,6 +325,10 @@ body > * {
   align-self: center;
   align-items: center;
   margin-right: var(--page-padding);
+}
+
+.icon-codepen {
+  display: flex;
 }
 
 .icon-codepen::before,
