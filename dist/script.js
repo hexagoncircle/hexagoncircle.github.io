@@ -16,16 +16,33 @@ const getThemeValue = () => {
   }
 };
 
+if ("loading" in HTMLImageElement.prototype) {
+  images.forEach((img) => (img.src = img.dataset.src));
+} else {
+  const observer = new IntersectionObserver(setImage, { threshold: 0 });
+
+  function setImage(images, observer) {
+    images.forEach((img) => {
+      if (img.intersectionRatio > 0) {
+        img.target.src = img.target.dataset.src;
+        observer.unobserve(img.target);
+      }
+    });
+  }
+
+  images.forEach((img) => observer.observe(img));
+}
+
+images.forEach((img) => {
+  img.addEventListener("load", (event) => {
+    event.target.removeAttribute("data-is-loading");
+  });
+});
+
 document.body.removeAttribute("data-no-js");
 
 getThemeValue();
 setTimeout(() => document.body.style.setProperty("--duration", "200ms"), 1000);
-
-[...images].forEach((image) => {
-  image.addEventListener("load", (event) => {
-    event.target.removeAttribute("data-is-loading");
-  });
-});
 
 slider.addEventListener("input", () => {
   setThemeValue(slider.value);
