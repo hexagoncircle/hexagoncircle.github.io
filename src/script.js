@@ -16,23 +16,6 @@ const getThemeValue = () => {
   }
 };
 
-if ("loading" in HTMLImageElement.prototype) {
-  images.forEach((img) => (img.src = img.dataset.src));
-} else {
-  const observer = new IntersectionObserver(setImage, { threshold: 0 });
-
-  function setImage(images, observer) {
-    images.forEach((img) => {
-      if (img.intersectionRatio > 0) {
-        img.target.src = img.target.dataset.src;
-        observer.unobserve(img.target);
-      }
-    });
-  }
-
-  images.forEach((img) => observer.observe(img));
-}
-
 images.forEach((img) => {
   img.addEventListener("load", (event) => {
     event.target.removeAttribute("data-is-loading");
