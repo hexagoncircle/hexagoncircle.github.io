@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)https://cdpn.io/cp/internal/boomboom/index.html?editors=0110&key=index.html-44bb292b-2d9c-5c35-7b99-3c30ffe4347b -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/hexagoncircle/pen/d9b7edb660a7e8dc5583e480bcec9049?editors=0110">
+
+  
+  
+<link rel="stylesheet" href="./reset.min.css">
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+    @import url("https://fonts.googleapis.com/css2?family=Petrona:wght@300&display=swap");
+
+body {
+  --color-text: hsl(0, 0%, 15%);
+  --color-bg: hsl(285, 18%, 4%);
+  --color-bubble-emoji: hotpink;
+  --color-bubble-user: skyblue;
+  --space: 4vmin;
+  --font-main: "Petrona", serif;
+  --duration: 100ms;
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Globals */
+* {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  padding: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
+}
+
+.wrapper {
+  display: grid;
+  justify-items: center;
+  grid-gap: var(--space);
+  position: relative;
+  -webkit-animation: squiggle 500ms linear infinite;
+          animation: squiggle 500ms linear infinite;
+}
+
+.bubble {
+  position: relative;
+  padding: var(--space);
+  color: var(--color-text);
+  font-size: clamp(1rem, 5vw, 4rem);
+  line-height: 1.2;
+  min-width: 20vmin;
+}
+
+.bubble--emoji span {
+  position: relative;
+  visibility: hidden;
+  -webkit-animation: char var(--duration) calc(var(--i) * var(--duration)) linear
+    forwards;
+          animation: char var(--duration) calc(var(--i) * var(--duration)) linear
+    forwards;
+}
+
+@-webkit-keyframes char {
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes char {
+  to {
+    visibility: visible;
+  }
+}
+
+.bubble::before,
+.bubble::after {
+  content: "";
+  position: absolute;
+  background-color: hotpink;
+  pointer-events: none;
+}
+
+.bubble::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2vmin;
+}
+
+.bubble::after {
+  top: calc(100% - 0.1vmin);
+  left: 60%;
+  width: 5vmin;
+  height: 5vmin;
+  -webkit-clip-path: polygon(30% 0, 0 100%, 100% 0);
+          clip-path: polygon(30% 0, 0 100%, 100% 0);
+}
+
+.bubble--user::before,
+.bubble--user::after {
+  background-color: var(--color-bubble-user);
+}
+
+/* Emoji section */
+#emoji-section {
+  opacity: 0.5;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: -webkit-transform calc(var(--duration) * 4) var(--ease);
+  transition: -webkit-transform calc(var(--duration) * 4) var(--ease);
+  transition: transform calc(var(--duration) * 4) var(--ease);
+  transition: transform calc(var(--duration) * 4) var(--ease), -webkit-transform calc(var(--duration) * 4) var(--ease);
+}
+
+.emoji {
+  position: relative;
+  font-size: 15vmin;
+  line-height: 1.5;
+  letter-spacing: 4.5vmin;
+  width: 2ch;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.emoji span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* User actions */
+.actions {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: var(--space);
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: white;
+  -webkit-transition: opacity calc(var(--duration) * 4) var(--ease);
+  transition: opacity calc(var(--duration) * 4) var(--ease);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.user-textarea {
+  position: relative;
+  z-index: 1;
+  border: none;
+  border-bottom: 2px solid var(--color-bubble-user);
+  background-color: var(--color-bubble-user);
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  min-width: 20vmin;
+  min-height: 5vmin;
+}
+
+.description {
+  position: absolute;
+  bottom: calc(var(--space) / 4);
+  right: calc(var(--space) / 2);
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+/* Animations */
+
+.is-talking .emoji span {
+  -webkit-animation: talking calc(var(--duration) * 2) steps(1, start)
+    var(--iteration-count);
+          animation: talking calc(var(--duration) * 2) steps(1, start)
+    var(--iteration-count);
+}
+
+.is-talking .actions {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.is-talking #emoji-section {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.btn:focus,
+.input:focus,
+.bubble--user:focus-within {
+  position: relative;
+  outline: 2px dashed yellow;
+  outline-offset: 3px;
+  z-index: 1;
+}
+
+.btn {
+  flex-shrink: 0;
+  width: auto;
+  padding: 0.75rem 2rem;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid var(--color-bubble-user);
+  background-color: var(--color-bubble-user);
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.label {
+  -webkit-box-flex: 1;
+          flex: 1 1 auto;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  color: var(--color-bubble-user);
+  border-bottom: 2px solid var(--color-bubble-user);
+}
+
+.input:focus {
+  color: white;
+}
+
+.btn:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
+@-webkit-keyframes talking {
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes talking {
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes squiggle {
+  0% {
+    -webkit-filter: url("#squiggle-0");
+            filter: url("#squiggle-0");
+  }
+  20% {
+    -webkit-filter: url("#squiggle-1");
+            filter: url("#squiggle-1");
+  }
+  40% {
+    -webkit-filter: url("#squiggle-2");
+            filter: url("#squiggle-2");
+  }
+  60% {
+    -webkit-filter: url("#squiggle-3");
+            filter: url("#squiggle-3");
+  }
+  80% {
+    -webkit-filter: url("#squiggle-4");
+            filter: url("#squiggle-4");
+  }
+  100% {
+    -webkit-filter: url("#squiggle-5");
+            filter: url("#squiggle-5");
+  }
+}
+
+@keyframes squiggle {
+  0% {
+    -webkit-filter: url("#squiggle-0");
+            filter: url("#squiggle-0");
+  }
+  20% {
+    -webkit-filter: url("#squiggle-1");
+            filter: url("#squiggle-1");
+  }
+  40% {
+    -webkit-filter: url("#squiggle-2");
+            filter: url("#squiggle-2");
+  }
+  60% {
+    -webkit-filter: url("#squiggle-3");
+            filter: url("#squiggle-3");
+  }
+  80% {
+    -webkit-filter: url("#squiggle-4");
+            filter: url("#squiggle-4");
+  }
+  100% {
+    -webkit-filter: url("#squiggle-5");
+            filter: url("#squiggle-5");
+  }
+}
+
+  </style>
+
+  
+<script src="./iframeConsoleRunner-7f4d47902dc785f30dedcac9c996b9f31d4dfcc33567cc48f0431bc918c2bf05.js"></script>
+<script src="./iframeRefreshCSS-bb9a2ba1f03f6147732cb3cd52ac86c6b24524aa87a05ed0b726f11e46d7e277.js"></script>
+<script src="./iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+</head>
+
+<body>
+  <main id="emoji-section" class="wrapper">
+  <div id="emoji-bubble" class="bubble bubble--emoji">Ask me anything.</div>
+  <div id="face" class="emoji">
+    <span></span>
+  </div>
+</main>
+<footer id="user-actions" class="actions">
+  <div id="user-bubble" class="bubble bubble--user">
+    <div id="user-bubble-textarea" class="user-textarea" contenteditable="">sadlf;kjsdf<div>asdf</div><div>asdf</div><div>asdfasdf</div><div>fsdf</div><div>safsd</div><div>f</div></div>
+    <div class="description">Press enter</div>
+  </div>
+  <!--   <button id="ask" class="btn">Ask</button> -->
+</footer>
+
+<svg style="display: none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="squiggle-0">
+      <feturbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"></feturbulence>
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+    </filter>
+    <filter id="squiggle-1">
+      <feturbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="1"></feturbulence>
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="3"></fedisplacementmap>
+    </filter>
+    <filter id="squiggle-2">
+      <feturbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"></feturbulence>
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+    </filter>
+    <filter id="squiggle-3">
+      <feturbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="3"></feturbulence>
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="3"></fedisplacementmap>
+    </filter>
+    <filter id="squiggle-4">
+      <feturbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="4"></feturbulence>
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="1"></fedisplacementmap>
+    </filter>
+    <filter id="squiggle-5">
+      <feturbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="5"></feturbulence>
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+    </filter>
+  </defs>
+</svg>
+  
+<script src="./stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  <script src="./pen.js"></script>
+
+
+</body></html>
