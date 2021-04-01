@@ -202,7 +202,7 @@ a:focus {
 a:focus,
 input[type="range"]:focus {
   outline: 2px dashed var(--color-secondary);
-  outline-offset: var(--outline-offset);
+  outline-offset: 4px;
 }
 
 em {
