@@ -28,7 +28,7 @@
   --font-bold: 600;
 
   --text-base: clamp(1.2rem, 4vw, 1.5rem);
-  --text-sm: clamp(0.85rem, 3vw, 1rem);
+  --text-sm: clamp(1rem, 3vw, 1.125rem);
   --text-md: clamp(1.4rem, 5vw, 2rem);
   --text-lg: clamp(2.25rem, 8vw, 3rem);
 
@@ -202,7 +202,7 @@ a:focus {
 a:focus,
 input[type="range"]:focus {
   outline: 2px dashed var(--color-secondary);
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
 em {
@@ -238,6 +238,7 @@ body > * {
 
 .social-links {
   display: flex;
+  gap: var(--space-sm);
 }
 
 .social-link {
@@ -483,4 +484,5 @@ input[type="range"]:active::-moz-range-thumb {
 .employment-info {
   margin-top: var(--space-xxs);
   font-size: var(--text-sm);
+  line-height: 1.3;
 }
