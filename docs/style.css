@@ -77,12 +77,12 @@
 }
 
 [data-theme="3"] {
-  --color-text: hsl(0, 0%, 95%);
+  --color-text: hsl(0, 0%, 100%);
   --color-text-accent: hsl(0, 0%, 85%);
-  --color-bg: hsl(217, 100%, 50%);
-  --color-bg-accent: hsl(209, 100%, 31%);
-  --color-primary: hsl(50, 100%, 50%);
-  --color-secondary: hsl(50, 100%, 50%);
+  --color-bg: hsl(217, 92%, 49%);
+  --color-bg-accent: hsl(217, 92%, 39%);
+  --color-primary: hsl(57, 100%, 50%);
+  --color-secondary: hsl(57, 100%, 50%);
 }
 
 [data-theme="4"] {
