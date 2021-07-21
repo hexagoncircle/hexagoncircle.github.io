@@ -49,7 +49,7 @@
   );
 
   --border-radius: 0.1rem;
-  --outline-offset: 3px;
+  --outline-offset: 2px;
   --duration: 0s;
   --ease: cubic-bezier(0.33, 1, 0.68, 1);
 
@@ -63,7 +63,7 @@
   --color-text-accent: hsl(0, 0%, 68%);
   --color-bg: hsl(285, 18%, 4%);
   --color-bg-accent: hsl(285, 18%, 15%);
-  --color-primary: hsl(344, 79%, 49%);
+  --color-primary: hsl(344, 85%, 50%);
   --color-secondary: hsl(47, 81%, 56%);
 }
 
@@ -82,7 +82,7 @@
   --color-bg: hsl(217, 92%, 49%);
   --color-bg-accent: hsl(217, 92%, 39%);
   --color-primary: hsl(57, 100%, 50%);
-  --color-secondary: hsl(57, 100%, 50%);
+  --color-secondary: hsl(57, 100%, 65%);
 }
 
 [data-theme="4"] {
@@ -100,7 +100,7 @@
   --color-bg: hsl(0, 0%, 98%);
   --color-bg-accent: hsl(0, 0%, 90%);
   --color-primary: hsl(230, 80%, 60%);
-  --color-secondary: hsl(344, 79%, 49%);
+  --color-secondary: hsl(344, 85%, 50%);
 }
 
 /* Utilities */
@@ -168,8 +168,8 @@
 }
 
 .multi-column > * {
-  padding-top: calc(var(--outline-offset) / 2);
-  padding-bottom: calc(var(--outline-offset) / 2);
+  margin-top: calc(var(--outline-offset) / 2);
+  margin-bottom: calc(var(--outline-offset) / 2);
 }
 
 .full-bleed {
@@ -202,7 +202,11 @@ a:focus {
 a:focus,
 input[type="range"]:focus {
   outline: 2px dashed var(--color-secondary);
-  outline-offset: 3px;
+  outline-offset: var(--outline-offset);
+}
+
+input[type="range"]:focus {
+  outline-offset: calc(var(--outline-offset) * 2);
 }
 
 em {
