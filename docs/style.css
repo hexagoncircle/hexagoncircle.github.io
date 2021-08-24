@@ -495,6 +495,7 @@ input[type="range"]:active::-moz-range-thumb {
 
 .employment-role {
   font-family: var(--font-family-accent);
+  font-style: italic;
   margin-top: var(--space-sm);
 }
 
@@ -503,8 +504,7 @@ input[type="range"]:active::-moz-range-thumb {
   font-size: var(--text-sm);
   color: var(--color-text-accent);
 }
-t ul {
-  list-style-type: square;
+pe: square;
   padding-left: 20px;
 }
 
@@ -606,6 +606,7 @@ input[type="range"]:active::-moz-range-thumb {
 
 .employment-role {
   font-family: var(--font-family-accent);
+  font-style: italic;
   margin-top: var(--space-sm);
 }
 
