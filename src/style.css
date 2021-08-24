@@ -1,36 +1,16 @@
-@font-face {
-  font-family: "Petrona";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("fonts/petrona-v12-latin-regular.woff2") format("woff2"),
-    url("fonts/petrona-v12-latin-regular.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Petrona";
-  font-style: normal;
-  font-weight: 700;
-  src: local(""), url("fonts/petrona-v12-latin-700.woff2") format("woff2"),
-    url("fonts/petrona-v12-latin-700.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Petrona";
-  font-style: italic;
-  font-weight: 400;
-  src: local(""), url("fonts/petrona-v12-latin-italic.woff2") format("woff2"),
-    url("fonts/petrona-v12-latin-italic.woff") format("woff");
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Petrona:ital,wght@1,500&family=Work+Sans:ital,wght@0,360;0,560;1,360&display=swap");
 
 :root {
-  --font-main: "Petrona", serif;
+  --font-family-primary: "Work Sans", serif;
+  --font-family-secondary: "Fraunces", serif;
+  --font-family-accent: "Petrona", serif;
   --font-bold: 600;
 
-  --text-base: clamp(1.2rem, 4vw, 1.5rem);
-  --text-sm: clamp(1rem, 3vw, 1.125rem);
-  --text-md: clamp(1.4rem, 5vw, 2rem);
-  --text-lg: clamp(2.25rem, 8vw, 3rem);
+  --text-base: clamp(1.1rem, 4vw, 1.3rem);
+  --text-sm: clamp(1rem, 3.5vw, 1.12rem);
+  --text-md: clamp(1.5rem, 5vw, 2.25rem);
+  --text-md-accent: clamp(1.4rem, 5vw, 2rem);
+  --text-lg: clamp(2.5rem, 8.7vw, 3.4rem);
 
   --space-base: 1rem;
   --space-xxs: calc(var(--space-base) / 4);
@@ -53,7 +33,7 @@
   --duration: 0s;
   --ease: cubic-bezier(0.33, 1, 0.68, 1);
 
-  --page-max-width: 40ch;
+  --page-max-width: 600px;
   --page-padding: var(--space-md);
 }
 
@@ -78,7 +58,7 @@
 
 [data-theme="3"] {
   --color-text: hsl(0, 0%, 100%);
-  --color-text-accent: hsl(0, 0%, 85%);
+  --color-text-accent: hsl(0, 0%, 94%);
   --color-bg: hsl(217, 92%, 49%);
   --color-bg-accent: hsl(217, 92%, 39%);
   --color-primary: hsl(57, 100%, 50%);
@@ -87,7 +67,7 @@
 
 [data-theme="4"] {
   --color-text: hsl(0, 0%, 7%);
-  --color-text-accent: hsl(0, 0%, 20%);
+  --color-text-accent: hsl(0, 0%, 0%);
   --color-bg: hsl(314, 88%, 51%);
   --color-bg-accent: hsl(314, 88%, 71%);
   --color-primary: hsl(0, 0%, 7%);
@@ -96,11 +76,11 @@
 
 [data-theme="5"] {
   --color-text: hsl(0, 0%, 5%);
-  --color-text-accent: hsl(0, 0%, 30%);
+  --color-text-accent: hsl(0, 0%, 20%);
   --color-bg: hsl(0, 0%, 98%);
   --color-bg-accent: hsl(0, 0%, 90%);
   --color-primary: hsl(230, 80%, 60%);
-  --color-secondary: hsl(344, 85%, 50%);
+  --color-secondary: hsl(344, 85%, 48%);
 }
 
 /* Utilities */
@@ -221,9 +201,10 @@ body {
     1fr;
   color: var(--color-text);
   background-color: var(--color-bg);
-  font-family: var(--font-main);
+  font-family: var(--font-family-primary);
   font-size: var(--text-base);
-  line-height: 1.5;
+  font-weight: 300;
+  line-height: 1.6;
   transition: var(--duration) var(--ease);
   transition-property: background-color, color;
 }
@@ -273,6 +254,7 @@ body > * {
 
 .title {
   flex: 1 0 100%;
+  font-family: var(--font-family-secondary);
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
   line-height: 1.2;
@@ -284,8 +266,9 @@ body > * {
 .subtitle {
   flex: 1 1 auto;
   font-style: italic;
-  font-size: var(--text-md);
-  font-weight: var(--font-bold);
+  font-family: var(--font-family-accent);
+  font-size: var(--text-md-accent);
+  font-weight: 500;
   line-height: 1.25;
   width: 100%;
 }
@@ -433,6 +416,7 @@ body > * {
 }
 
 .section-title {
+  font-family: var(--font-family-secondary);
   font-size: var(--text-md);
   font-weight: var(--font-bold);
   line-height: 1.25;
@@ -500,8 +484,9 @@ input[type="range"]:active::-moz-range-thumb {
 .employment-list dl {
   margin-bottom: var(--space-md);
 }
+
 .employment-list dt {
-  font-weight: var(--font-bold);
+  font-family: var(--font-family-secondary);
 }
 
 .employment-list dd {
@@ -509,6 +494,7 @@ input[type="range"]:active::-moz-range-thumb {
 }
 
 .employment-role {
+  font-family: var(--font-family-accent);
   margin-top: var(--space-sm);
 }
 
