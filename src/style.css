@@ -28,6 +28,10 @@
     calc(var(--space-base) * 5)
   );
 
+  --list-offset: 20px;
+  --list-style-type: square;
+  --list-marker-color: var(--color-primary);
+
   --border-radius: 0.1rem;
   --outline-offset: 2px;
   --duration: 0s;
@@ -401,8 +405,8 @@ body > * {
 }
 
 .page-content ul {
-  list-style-type: square;
-  padding-left: 20px;
+  list-style-type: var(--list-style-type);
+  margin-left: var(--list-offset);
 }
 
 .page-content li {
@@ -411,7 +415,7 @@ body > * {
 }
 
 .page-content li::marker {
-  color: var(--color-primary);
+  color: var(--list-marker-color);
   transition: color var(--duration) var(--ease);
 }
 
@@ -489,14 +493,33 @@ input[type="range"]:active::-moz-range-thumb {
   font-family: var(--font-family-secondary);
 }
 
-.employment-list dd {
-  margin-left: var(--space-base);
+.employment-list dd:not(.employment-location) {
+  margin-left: var(--list-offset);
+}
+
+.employment-location {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  padding: 0 var(--space-sm);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family-primary);
+  font-size: 0.7em;
+  text-transform: uppercase;
+
+  color: var(--color-bg);
+  background-color: var(--color-primary);
 }
 
 .employment-role {
+  display: list-item;
+  list-style-type: var(--list-style-type);
+  margin-top: var(--space-sm);
   font-family: var(--font-family-accent);
   font-style: italic;
-  margin-top: var(--space-sm);
+}
+
+.employment-role::marker {
+  color: var(--color-primary);
 }
 
 .employment-info {
