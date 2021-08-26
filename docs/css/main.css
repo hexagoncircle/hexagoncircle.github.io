@@ -614,7 +614,12 @@ input[type=range]:active::-moz-range-thumb {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(var(--column-width), 1fr));
 	grid-gap: var(--column-gap);
-	margin-bottom: var(--space-lg);
+}
+
+.employment-list dl:not(:last-child) {
+	border-bottom: 2px dashed var(--color-bg-accent);
+	padding-bottom: var(--space-md);
+	margin-bottom: var(--space-md);
 }
 
 .employment-list dt {
