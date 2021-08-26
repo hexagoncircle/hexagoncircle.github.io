@@ -1,0 +1,43 @@
+/* Employment List */
+.employment-list dl {
+  margin-bottom: var(--space-md);
+}
+
+.employment-list dt {
+  font-family: var(--font-family-secondary);
+}
+
+.employment-list dd:not(.employment-location) {
+  margin-left: var(--list-offset);
+}
+
+.employment-location {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  padding: 0 var(--space-sm);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family-primary);
+  font-size: 0.7em;
+  text-transform: uppercase;
+
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+}
+
+.employment-role {
+  display: list-item;
+  list-style-type: var(--list-style-type);
+  margin-top: var(--space-sm);
+  font-family: var(--font-family-accent);
+  font-style: italic;
+}
+
+.employment-role::marker {
+  color: var(--list-marker-color);
+}
+
+.employment-info {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-accent);
+}
