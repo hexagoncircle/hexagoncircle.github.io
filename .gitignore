@@ -1,41 +1,5 @@
-# Packages #
-############
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases #
-######################
-*.log
-*.sql
-*.mysql
-
-# OS generated files #
-######################
-ehthumbs.db
-._*
-.DS_Store
-Thumbs.db
-.buildpath
-.cache
-.project
-.settings
-.tmproj
-nbproject
-*.sublime-project
-*.sublime-workspace
-
 # Folders #
 ###########
-.hg
-.svn
-.CVS
-.idea
 .vscode
 node_modules
 
