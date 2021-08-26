@@ -59,7 +59,8 @@
 }
 
 .multi-column {
-  column-width: 200px;
+  column-width: var(--column-width);
+  column-gap: var(--column-gap);
 }
 
 .multi-column > * {
