@@ -614,7 +614,7 @@ input[type=range]:active::-moz-range-thumb {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(var(--column-width), 1fr));
 	grid-gap: var(--column-gap);
-	margin-bottom: var(--space-md);
+	margin-bottom: var(--space-lg);
 }
 
 .employment-list dt {
@@ -628,7 +628,6 @@ input[type=range]:active::-moz-range-thumb {
 
 .employment-location {
 	display: inline-block;
-	margin-top: var(--space-sm);
 	padding: 0 var(--space-sm);
 	border-radius: var(--border-radius);
 	font-family: var(--font-family-primary);
